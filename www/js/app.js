@@ -4,7 +4,7 @@ function onAppReady() {
         navigator.splashscreen.hide() ;
     }
     socket.on('connect', function(){
-        console.log("CONECTADO"); 
+        alert("CONECTADO"); 
         socket.emit("saludo"); 
     });
     $("#btn_acceso").on("click",function(){        
