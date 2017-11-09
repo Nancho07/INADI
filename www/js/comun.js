@@ -12,7 +12,7 @@ var resp_sistole_text="";
 var resp_diastole = 0;
 var resp_diastole_text="";
 var inicio = "";
-	
+    usuario.prefix  = "inadi";	
 $(document).ready(function(){
   socket.on("delServidor",function(datos){
     if(data.success===false){
