@@ -2,16 +2,16 @@ var socket;
 var usuario={};
 var alertas;
 function onAppReady() { 
-    /*if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
+    if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
         navigator.splashscreen.hide() ;
-    }*/
+    }
 }
 document.addEventListener("app.Ready", onAppReady, false) ;
 $(document).ready(function() {
     socket = io.connect("https://medic2-imixhn.c9users.io:8080/");
     socket.on('connect', function () {
         console.log("CONECTADO");
-        socket.emit("saludo");
+        socket.emit("saludo"); 
         //$(".fa-address-book-o").css("color","");
         //setName();
     });
