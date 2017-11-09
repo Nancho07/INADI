@@ -1,4 +1,4 @@
-socket = io.connect("https://medic2-imixhn.c9users.io:8080/");        
+socket = io.connect("https://medic2-imixhn.c9users.io");        
 function onAppReady() { 
     if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
         navigator.splashscreen.hide() ;
