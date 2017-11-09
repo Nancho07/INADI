@@ -1,10 +1,12 @@
-socket = io.connect("https://medic2-imixhn.c9users.io:8080");        
+socket = io.connect("https://medic2-imixhn.c9users.io:8080/");        
 function onAppReady() { 
     if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
         navigator.splashscreen.hide() ;
-    }
+    }    
+}
+document.addEventListener("app.Ready", onAppReady, false) ;
+$(document).ready(function() {
     socket.on('connect', function(){
-        alert("CONECTADO"); 
         socket.emit("saludo"); 
     });
     $("#btn_acceso").on("click",function(){        
@@ -17,7 +19,7 @@ function onAppReady() {
         console.log(usuario);
         socket.emit("loggin",usuario);         
     });
-    $("#usuario").keypress(function(){
+    $("#usuario").keypress(function(){ 
         var usuario = $("#usuario").val();
         socket.emit('identify', usuario);
     });
@@ -33,9 +35,7 @@ function onAppReady() {
         //crearCookie("usuario_medicall",datos.name,0.020833333333,'/',"");
         document.location.href="#menu";
     });
-}
-document.addEventListener("app.Ready", onAppReady, false) ;
-//$(document).ready(function() {});
+});
 function setName() {
     //var datos ={};
     //usuario.usuario = getCookie('usuario_medicall');
