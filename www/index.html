@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Blank Cordova Mobile App Project Template (Lite)</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>    
+    <link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css" type="text/css"/>
+    <link rel="stylesheet" href="css/materialDateTimePicker.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/medic.css" type="text/css"> 
+    <link rel="stylesheet" href="css/RYPP.css">
+    
+    <script src="js/imixio.js"></script>
+    <script src='js/jquery.min.js'></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src='js/moment.js'></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>-->
+    <script src="js/md5.js" type="text/javascript"></script>    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/css/gijgo.min.css" rel="stylesheet" type="text/css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/materialDateTimePicker.js" type="text/javascript"></script>
+    <script src="js/jquery-confirm.js" type="text/javascript"></script>
+    <script src="js/alerta.js" type="text/javascript"></script>
+    
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./js/RYPP.js"></script>
+    <script src="js/comun.js" type="text/javascript"></script> 
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="/xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+</head>
+
+<body>
+    <div data-role="page" data-name = "acceso" id="acceso" name = "acceso" style="background-color:#394264;">
+        <div class="account block col-sm-12">
+            <div align="center" class="col-sm-12" style="margin-top:50px;">
+                <img src="images/inadi_160.png" alt="logo" height="100" width="100"> 
+            </div>
+            <h2 class="titular">INGRESE A SU CUENTA</h2>
+            <div align="center" class="input-container col-sm-12">
+                <input type="text" placeholder="sucorreo@elqueustedeligio.com" class="email text-input scnd-font-color"  id="usuario" required>
+                <div class="input-icon envelope-icon-acount">
+                    <span class="scnd-font-color fontawesome-envelope"></span><!--fontawesome-envelope-->
+                </div>
+            </div>
+            <div align="center" class="input-container col-sm-12">
+                <input type="password" placeholder="Password" class="password text-input" id="clave" required>
+                <div class="input-icon password-icon"><span class="fontawesome-lock scnd-font-color"></span></div>
+            </div>
+            <a type="button" class="sign-in button btn_login" href="#" id="btn_login">INGRESAR</a>
+            <p class="scnd-font-color">¿Olvido su clave?</p>
+            <a type="button" class="fb-sign-in" href="#">
+                <!--<p><span class="fb-border"><span class="icon zocial-facebook"></span></span>Ingrese con Facebook</p>-->
+            </a>
+        </div>
+    </div>
+    <div data-role="page" data-name = "menu" id="menu" name = "menu" style="background-color:#394264;">
+        <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
+            <h2 class="titular">MENU BOX</h2>
+            <ul class="menu-box-menu">
+                <li>
+                    <a class="menu-box-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages<div class="menu-box-number">24</div></a>                            
+                </li>
+                <li>
+                    <a class="menu-box-tab" href="#estadistica0"><span class="icon entypo-paper-plane scnd-font-color"></span>Invites<div class="menu-box-number">3</div></a>                            
+                </li>
+                <li>
+                    <a class="menu-box-tab" href="#estadistica1"><span class="icon entypo-calendar scnd-font-color"></span>Events<div class="menu-box-number">5</div></a>                            
+                </li>
+                <li>
+                    <a class="menu-box-tab" href="#configuracion"><span class="icon entypo-cog scnd-font-color"></span>Configuraci&oacute;n Cuenta</a>
+                </li>
+                <li>
+                    <a class="menu-box-tab" href="#estadistica"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>Estadisticas</a>
+                </li>                        
+            </ul>
+        </div>
+        <a type="button" class="sign-in button btn_acceso" href="#" id="btn_acceso">SALIR</a>
+    </div>
+    <div data-role="page" data-name = "datos" id="datos" name = "datos" style="background-color:#394264;">
+    </div>
+    <div data-role="page" data-name = "estadistica" id="estadistica" name = "estadistica" style="background-color:#394264;">
+        <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
+            <h2 class="titular">OS AUDIENCE STATS</h2>
+            <div class="donut-chart">
+                <!-- DONUT-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->
+                <div id="porcion1" class="recorte"><div class="quesito ios" data-rel="21"></div></div>
+                <div id="porcion2" class="recorte"><div class="quesito mac" data-rel="39"></div></div>
+                <div id="porcion3" class="recorte"><div class="quesito win" data-rel="31"></div></div>
+                <div id="porcionFin" class="recorte"><div class="quesito linux" data-rel="9"></div></div>
+                <!-- END DONUT-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->    
+                <p class="center-date">JUNE<br><span class="scnd-font-color">2013</span></p> 
+            </div>
+            <ul class="os-percentages horizontal-list" style="width:100%">
+                <li style="width:25%">
+                    <p class="ios os scnd-font-color">iOS</p>
+                    <p class="os-percentage">21<sup>%</sup></p>
+                </li>
+                <li style="width:25%">
+                    <p class="mac os scnd-font-color">Mac</p>
+                    <p class="os-percentage">48<sup>%</sup></p>
+                </li>
+                <li style="width:25%">
+                    <p class="linux os scnd-font-color">Linux</p>
+                    <p class="os-percentage">9<sup>%</sup></p>
+                </li>
+                <li style="width:25%">
+                    <p class="win os scnd-font-color">Win</p>
+                    <p class="os-percentage">32<sup>%</sup></p>
+                </li>
+            </ul>
+        </div>
+        <a type="button" class="sign-in button btn_menu" href="#">SALIR</a>
+    </div>
+    <div data-role="page" data-name = "estadistica0" id="estadistica0" name = "estadistica0" style="background-color:#394264;">
+        <div class="line-chart-block block clear"> <!-- LINE CHART BLOCK (LEFT-CONTAINER) -->
+            <div class="line-chart">
+              <!-- LINE-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->
+                <div class='grafico'>
+                   <ul class='eje-y'>
+                     <li data-ejeY='30'></li>
+                     <li data-ejeY='20'></li>
+                     <li data-ejeY='10'></li>
+                     <li data-ejeY='0'></li>
+                   </ul>
+                   <ul class='eje-x'>
+                     <li>Abril</li>
+                     <li>Mayo</li>
+                     <li>Junio</li>
+                   </ul>
+                     <span data-valor='25'>
+                       <span data-valor='8'>
+                         <span data-valor='13'>
+                           <span data-valor='5'>   
+                             <span data-valor='23'>   
+                             <span data-valor='12'>
+                                 <span data-valor='15'>
+                                 </span></span></span></span></span></span></span>
+                </div>
+                <!-- END LINE-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->
+            </div>
+            <ul class="time-lenght horizontal-list">
+                <li><a class="time-lenght-btn" href="#14">Week</a></li>
+                <li><a class="time-lenght-btn" href="#15">Month</a></li>
+                <li><a class="time-lenght-btn" href="#16">Year</a></li>
+            </ul>
+            <ul class="month-data clear">
+                <li>
+                    <p>ABR<span class="scnd-font-color"> 2013</span></p>
+                    <p><span class="entypo-plus increment"> </span>21<sup>%</sup></p>
+                </li>
+                <li>
+                    <p>MAY<span class="scnd-font-color"> 2013</span></p>
+                    <p><span class="entypo-plus increment"> </span>48<sup>%</sup></p>
+                </li>
+                <li>
+                    <p>JUN<span class="scnd-font-color"> 2013</span></p>
+                    <p><span class="entypo-plus increment"> </span>35<sup>%</sup></p>
+                </li>
+            </ul>
+        </div>
+        <a type="button" class="sign-in button btn_menu" href="#">SALIR</a>
+    </div>
+    <div data-role="page" data-name = "estadistica1" id="estadistica1" name = "estadistica1" style="background-color:#394264;">
+         <div class="col-sm-12">
+            <!--<div align="center" class="media block col-sm-12">-->
+                <div id="player" class="col-sm-12" style="margin-top:20px;"></div>
+            <!--</div>-->  
+         </div>
+        <a type="button" class="sign-in button btn_menu" href="#">SALIR</a>
+    </div>
+    <div data-role="page" data-name = "configuracion" id="configuracion" name = "configuracion" style="background-color:#394264;">
+        <div class="profile block col-sm-12">
+        <a class="add-button" href="#"><span class="icon entypo-plus scnd-font-color"></span></a>
+        <div class="profile-picture big-profile-picture clear col-sm-12">
+            <img width="150px" alt="Anne Hathaway picture" src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg" >
+        </div>
+        <h1 class="user-name">Anne Hathaway</h1>
+        <div class="profile-description col-sm-12">
+            <p class="scnd-font-color">Lorem ipsum dolor sit amet consectetuer adipiscing</p>
+        </div>
+        <div class="col-sm-12">
+        <ul class="profile-options horizontal-list" style="width:100%">
+        <li style="width:33%"><a  style="width:100%" class="comments" href="#40"><p><span class="icon fontawesome-comment-alt scnd-font-color"></span>23</p></a></li>
+        <li style="width:33%"><a style="width:100%" class="views" href="#41"><p><span class="icon fontawesome-eye-open scnd-font-color"></span>841</p></a></li>
+        <li style="width:33%"><a style="width:100%" class="likes" href="#42"><p><span class="icon fontawesome-heart-empty scnd-font-color"></span>49</p></a></li>
+        </ul>
+        </div>
+        </div>
+        <a type="button" class="sign-in button btn_menu" href="#">SALIR</a>
+    </div>
+    <script>
+    var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '100%',
+          width: '100%',
+          videoId: 'hMMWfCM1vvw',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 0000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>   
+</body>
+</html>
