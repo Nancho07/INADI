@@ -48,18 +48,21 @@
 <body>
     <div data-role="page" data-name = "acceso" id="acceso" name = "acceso" style="background-color:#394264;">
         <div class="account block col-sm-12">
+            <div align="center" class="col-sm-12" style="margin-top:50px;">
+                <img src="/images/inadi_160.png" alt="logo" height="100" width="100">
+            </div>
             <h2 class="titular">INGRESE A SU CUENTA</h2>
             <div align="center" class="input-container col-sm-12">
-                <input type="text" placeholder="sucorreo@elqueustedeligio.com" class="email text-input scnd-font-color">
+                <input type="text" placeholder="sucorreo@elqueustedeligio.com" class="email text-input scnd-font-color"  id="usuario" required>
                 <div class="input-icon envelope-icon-acount">
-                    <span class="fontawesome-envelope scnd-font-color"></span>
+                    <span class="scnd-font-color fontawesome-envelope"></span><!--fontawesome-envelope-->
                 </div>
             </div>
             <div align="center" class="input-container col-sm-12">
-                <input type="password" placeholder="Password" class="password text-input">
+                <input type="password" placeholder="Password" class="password text-input" id="clave" required>
                 <div class="input-icon password-icon"><span class="fontawesome-lock scnd-font-color"></span></div>
             </div>
-            <a type="button" class="sign-in button btn_menu" href="#" id="btn_menu">INGRESAR</a>
+            <a type="button" class="sign-in button btn_login" href="#" id="btn_login">INGRESAR</a>
             <p class="scnd-font-color">¿Olvido su clave?</p>
             <a type="button" class="fb-sign-in" href="#">
                 <!--<p><span class="fb-border"><span class="icon zocial-facebook"></span></span>Ingrese con Facebook</p>-->
@@ -88,6 +91,8 @@
             </ul>
         </div>
         <a type="button" class="sign-in button btn_acceso" href="#" id="btn_acceso">SALIR</a>
+    </div>
+    <div data-role="page" data-name = "datos" id="datos" name = "datos" style="background-color:#394264;">
     </div>
     <div data-role="page" data-name = "estadistica" id="estadistica" name = "estadistica" style="background-color:#394264;">
         <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
@@ -173,10 +178,9 @@
     </div>
     <div data-role="page" data-name = "estadistica1" id="estadistica1" name = "estadistica1" style="background-color:#394264;">
          <div class="col-sm-12">
-            <div align="center" class="media block col-sm-12">
-                <!--<iframe width="100%" height="100%" src="//www.youtube.com/embed/hMMWfCM1vvw?autoplay=0&showinfo=0&controls=1" frameborder="0" allowfullscreen></iframe>-->
-                <div id="player"></div>
-            </div>  
+            <!--<div align="center" class="media block col-sm-12">-->
+                <div id="player" class="col-sm-12" style="margin-top:20px;"></div>
+            <!--</div>-->  
          </div>
         <a type="button" class="sign-in button btn_menu" href="#">SALIR</a>
     </div>
@@ -223,7 +227,7 @@
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 3000);
+          setTimeout(stopVideo, 0000);
           done = true;
         }
       }

@@ -1,6 +1,9 @@
 var socket;
 var usuario={};
 var alertas;
+var usuario={};
+usuario.prefix  = "inadi";
+        
 function onAppReady() { 
     if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
         navigator.splashscreen.hide() ;
@@ -11,21 +14,29 @@ $(document).ready(function() {
     socket = io.connect("https://medic2-imixhn.c9users.io:8080/");
     socket.on('connect', function () {
         console.log("CONECTADO");
-        socket.emit("saludo"); 
+        //socket.emit("saludo"); 
         //$(".fa-address-book-o").css("color","");
         //setName();
     });
 
-    $("#btn_acceso").on("click",function(){ 
+    $("#btn_acceso").on("click",function(){        
         document.location.href = "#acceso";
+    });
+    $(".btn_login").on("click",function(){
+        usuario.clave = MD5($("#clave").val());
+        usuario.usuario = $("#usuario").val();
+        usuario.pagina  ="loggin";
+        socket.emit('loggin',usuario);
+        
     });
     $(".btn_menu").on("click",function(){ 
         document.location.href = "#menu";
         stopVideo();
-    });
-    $("#btn_menu").on("click",function(){ 
-        document.location.href = "#menu";
     });    
+    socket.on("loggin",function(datos){
+        //crearCookie("usuario_medicall",datos.name,0.020833333333,'/',"");
+        document.location.href="#menu";
+    });
 });
 function setName() {
     //var datos ={};
