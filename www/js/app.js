@@ -9,7 +9,7 @@ $(document).ready(function() {
     
     socket.on('connect', function(){
         socket.emit("saludo"); 
-        $("#logo").attr("src","../images/inadi_190_blue.png"); 
+        $("#logo").attr("src","images/inadi_190_blue.png"); 
     });
     $("#btn_acceso").on("click",function(){        
         document.location.href = "#acceso";
