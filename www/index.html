@@ -48,8 +48,9 @@
 <body>
     <div data-role="page" data-name = "acceso" id="acceso" name = "acceso" style="background-color:#394264;">
         <div class="account block col-sm-12">
-            <div align="center" class="col-sm-12" style="margin-top:50px;">
-                <img src="images/inadi_160.png" alt="logo" height="100" width="100"> 
+            <h1 class="titular">INADI</h1>
+            <div align="center" class="col-sm-12" style="margin-top:0px;">
+                <img src="images/inadi_190_red.png" alt="logo" id="logo" height="150" width="150"> 
             </div>
             <h2 class="titular">INGRESE A SU CUENTA</h2>
             <div align="center" class="input-container col-sm-12">
@@ -74,7 +75,7 @@
             <h2 class="titular">MENU BOX</h2>
             <ul class="menu-box-menu">
                 <li>
-                    <a class="menu-box-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages<div class="menu-box-number">24</div></a>                            
+                    <a class="menu-box-tab" href="#datos"><span class="icon fontawesome-envelope scnd-font-color"></span>Pacientes<div class="menu-box-number">4</div></a>                            
                 </li>
                 <li>
                     <a class="menu-box-tab" href="#estadistica0"><span class="icon entypo-paper-plane scnd-font-color"></span>Invites<div class="menu-box-number">3</div></a>                            
@@ -92,7 +93,179 @@
         </div>
         <a type="button" class="sign-in button btn_acceso" href="#" id="btn_acceso">SALIR</a>
     </div>
-    <div data-role="page" data-name = "datos" id="datos" name = "datos" style="background-color:#394264;">
+    <div data-role="page" data-name="datos" id="datos" name = "datos" style="background-color:#394264;">
+        <div class="" id="1b"><!-- panel datos -->
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-xs-12 col-md-4 col-lg-3" id="numId">
+                    <div class=""><label  class="m-0 etiqueta-1">ID:</label></div>
+                    <input type="text" name="identidad" id="identidad" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="Identidad" required> 
+                </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class=""><label class="m-0 etiqueta-1">Nombre:</label></div>
+                    <input type="text" name="nombres" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="" id="nombres" required> </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class=""><label  class="m-0 etiqueta-1">Apellido:</label></div>
+                    <input type="text" name="apellidos" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="" id="apellidos"> </div>
+
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class="form-group"><label class="col-xs-3 control-label m-0 etiqueta-1">Fecha Ingreso:</label>
+                      <div class="col-xs-5 date">
+                        <div class="input-group input-append date">
+                          <input type="text" name="f_ingreso" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="" id="f_ingreso" required>
+                          <span id="span_f_ingreso" class="input-group-addon add-on border border-primary" style="background-color:#131415;"><span class="fa fa-calendar text-primary"></span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-md-4 col-lg-3">  
+                    <div class=""><label for="division"  class="m-0 etiqueta-1">Organizaci&oacute;n:</label></div>
+                    <input type="text" name="division" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="Ingrese divisi&oacute;n / organizaci&oacute;n" id="division"> 
+                  </div>
+
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class=""><label class="m-0 etiqueta-1">Profesi&oacute;n:</label></div>
+                    <input type="text" name="profesion" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="" id="profesion" > 
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class=""><label class="m-0 etiqueta-1">Edad:</label></div>
+                    <input type="text" name="edad" id="edad" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder=""> 
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">  
+                    <label for="estadoCivil" class="m-0 etiqueta-1">Estado Civil:</label>
+                    <select class="form-control border border-primary text-primary" style="background-color:#131415;" id="estadoCivil">
+                      <option value = "no">No proporcionado</option>
+                      <option value = "so">Soltero</option>
+                      <option value = "ca">Casado</option>
+                      <option value = "un">Uni&oacute;n Libre</option>
+                      <option value = "se">Separado</option>
+                      <option value = "vi">Viudo</option>
+                    </select>
+                  </div> 
+                  <div class="col-xs-12 col-md-4 col-lg-3 separarInput" style>
+                    <div align="left" class=""><label class="m-0 etiqueta-1">Sexo:</label></div>
+                      <div class="form-control border border-primary" style="padding:5px 20px 0px 20px; margin:0px;background-color:#131415;">
+                      <div align="center" class="row" style="background-color:#131415;"> 
+                        <label class="radio-inline w-50 etiqueta-1">
+                          <input id="masculino" type="radio" name="sexo" value="M" class="border border-primary" style="background-color:#131415;" >
+                          <span style="margin-left:10px; font-size:1.2em"><b class="text-primary">M</b></span>
+                        </label> 
+                        <label class="radio-inline w-50 etiqueta-1">
+                          <input id="femenino" type="radio" name="sexo" value="F" class="border border-primary" style="background-color:#131415;" >
+                          <span style="margin-left:10px; font-size:1.2em;"><b class="text-primary">F</b></span>
+                        </label> 
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3 separarInput">
+                    <div class="form-group"> <label class="col-xs-3 control-label m-0 etiqueta-1">Fecha Nacimiento:</label>
+                      <div class="col-xs-5 date">
+                        <div class="input-group input-append date" id="datePickerFechaNacimiento">
+                          <input type="text" class="form-control border border-primary text-primary" style="background-color:#131415;" name="fecha_nacimiento" id="fecha_nacimiento"> 
+                          <span id="span_fecha_nacimiento" class="input-group-addon add-on border border-primary" style="background-color:#131415;"><span class="fa fa-calendar text-primary"></span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3 separarInput">
+                    <div class=""><label class="m-0 etiqueta-1">Tel&eacute;fono:</label></div>
+                    <input type="text" id="telefono" name="telefono" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder=""> </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class="col-xs-12 col-md-4 col-lg-3 separarInput"><label class="m-0 etiqueta-1">Celular:</label></div>
+                    <input type="text" id="celular" name="celular" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder=""> 
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <label for="pais" class="m-0 etiqueta-1">Pa&iacute;s: <span id="paisLocal">(HN)</span></label>
+                    <select class="form-control border border-primary text-primary" style="background-color:#131415;" id="pais">
+                      <option>Honduras</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <label for="departamentos" class="m-0 etiqueta-1">Departamento:</label>
+                    <select class="form-control border border-primary text-primary" style="background-color:#131415;" id="departamentos">
+                      <option>Francisco Morazan</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <label for="municipalidad" class="m-0 etiqueta-1">Municipalidad:</label>
+                    <select class="form-control border border-primary text-primary" style="background-color:#131415;" id="municipalidad">
+                      <option>Distrito Central</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-3">
+                    <div class=""><label class="m-0 etiqueta-1">Ciudad / Localidad:</label></div>
+                    <input type="text" id="ciudad" name="ciudad" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="">
+                  </div>
+                  <div class="col-xs-12 col-md-6 col-lg-6" style="margin-top: 10px;">
+                    <label class="m-0 etiqueta-1" style="text-align: left;">email:</label>
+                    <input type="email" id="email_paciente" name="email_paciente" class="form-control border border-primary text-primary" style="background-color:#131415;" placeholder="">
+                  </div>
+                  <div class="col-xs-12 col-md-6 col-lg-3" style="margin-top: 10px;">
+                    <label class="m-0 etiqueta-1" style="text-align: left;">Categor&iacute;a:</label>
+                    <select class="form-control border border-primary text-primary" style="background-color:#131415;" id="catego_paciente">
+                      <option value="Normal">Normal</option>
+                      <option value="Especial">Especial</option>
+                      <option value="Privado">Privado</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-12 col-md-6 col-lg-3" style="margin-top: 10px;">
+                        <label class="m-0 etiqueta-1" style="text-align: left;">Tipo de Sangre:</label>
+                        <input type="text" class="form-control border border-primary text-primary" style="background-color:#131415;width: 100%;" id="tipo_sangre">
+                  </div>
+                  <div align="left" class="col-xs-12 col-md-6 col-lg-6" style="margin-top:20px">
+                    <div class=""><label class="m-0 etiqueta-1" style="text-align: left;">Direcci&oacute;n:</label></div> 
+                    <textarea class="form-control w-100 m-0 border border-primary text-primary" style="background-color:#131415;" rows="5" id="direccion" name="direccion" placeholder="Direcci&oacute;n"></textarea> 
+                  </div>
+                  <div align="center" class="mygrid-wrapper-div-datos col-xs-12 col-md-6 col-lg-6"
+                    style="margin-top:45px">
+                    <table id="c_table" class="table pi-draggable" draggable="true">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Consultas</th>
+                          <th>Fechas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Primer Consulta</td>
+                          <td id="fecha1"> / / </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Ultima Consulta</td>
+                          <td id="fecha2"> / / </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Total Consultas</td>
+                          <td id="cantidad_consultas">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div align="center" class="col-xs-12 col-md-12 col-lg-12" style="margin-top:20px">
+                    <div id="c_btn-group" class="pi-draggable btn-group">
+                      <a data-accion="3" data-app="21" href="#" id="btnBuscarPacientes" class="btn btn-light text-primary menuPersonal" data-toggle="modal" data-target="#buscarPacientes">Buscar</a>
+                      <a data-accion="2" data-app="21" href="#" id="btnGuardarPacientes" class="btn btn-success menuPersonal">Guardar</a>
+                      <a data-accion="4" data-app="21" href="#" id="btnEliminarPacientes" class="btn btn-warning menuPersonal">Eliminar</a>
+                      <a data-accion="1" data-app="21" href="#" id="btnNuevoPaciente" class="btn btn-warning menuPersonal">Nuevo</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
     </div>
     <div data-role="page" data-name = "estadistica" id="estadistica" name = "estadistica" style="background-color:#394264;">
         <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->

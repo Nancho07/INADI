@@ -6,13 +6,15 @@ function onAppReady() {
 }
 document.addEventListener("app.Ready", onAppReady, false) ;
 $(document).ready(function() {
+    
     socket.on('connect', function(){
         socket.emit("saludo"); 
+        $("#logo").attr("src","../images/inadi_190_blue.png"); 
     });
     $("#btn_acceso").on("click",function(){        
         document.location.href = "#acceso";
     });
-    $(".btn_login").on("click",function(){
+    $(".btn_login").on("click",function(){ 
         usuario.pass = MD5($("#clave").val());
         usuario.usuario = $("#usuario").val();
         usuario.pagina  = "loggin"; 
@@ -32,8 +34,10 @@ $(document).ready(function() {
         stopVideo();
     });    
     socket.on("loggin",function(datos){
-        //crearCookie("usuario_medicall",datos.name,0.020833333333,'/',"");
-        document.location.href="#menu";
+        if(datos.success==true){
+            //crearCookie("usuario_medicall",datos.name,0.020833333333,'/',"");
+            document.location.href="#menu";
+        }
     });
 });
 function setName() {

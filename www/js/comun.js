@@ -34,7 +34,7 @@ $(document).ready(function(){
 		}
   });
   socket.on('disconnect', function() {
-    $(".fa-address-book-o").css("color","red");
+    $("#logo").attr("src","../images/inadi_160_red.png");
     alertas.contenido="El servidor se ha desconectado...";
     alertas.btnConfirma="No";
     alertas.funcionConfirma="";
