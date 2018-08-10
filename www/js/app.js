@@ -917,14 +917,14 @@ function back(){
 /****************** Fin Panel Lateral Citas ******************/
 function onAppReady(){
     if (typeof(Storage) !== "undefined") {
-        if(localStorage.inputUrl){
-            $("#inputrootUrl").val(localStorage.inputUrl);
+        if(localStorage.getItem("inputUrl")){
+            $("#inputrootUrl").val(localStorage.getItem("inputUrl"));
         }
-        if(localStorage.inputUsuario){
-            $("#inputUsuario").val(localStorage.inputUsuario);
+        if(localStorage.getItem("inputUsuario")){
+            $("#inputUsuario").val(localStorage.getItem("inputUsuario"));
         }
-        if(localStorage.inputEmail){
-            $("#inputEmail").val(localStorage.inputEmail);
+        if(localStorage.getItem("inputEmail")){
+            $("#inputEmail").val(localStorage.getItem("inputEmail"));
         }
     } else {
         var mensaje = {
